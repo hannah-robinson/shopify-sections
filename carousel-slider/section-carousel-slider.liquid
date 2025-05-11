@@ -1,0 +1,40 @@
+<!-- {{ 'section-carousel-slider.css' | asset_url | stylesheet_tag }} -->
+<script src="section-carousel-slider.js" defer></script>
+<link rel="stylesheet" href="section-carousel-slider.css">
+
+<section id="section-carousel-slider" class="section-carousel-slider">
+  <div class="wrapper">
+    <span
+      id="slider__nav-arrow--left"
+      class="nav-arrow"
+      title="Previous slide"
+      data-prev
+      >&larr;</span
+    >
+    <div class="slider">
+      {% for x in x %}
+        <a class="card" href="{{ x.url }}">
+          <div class="img">
+            <img
+              src="{{ x.img }}"
+              alt="{{ x.img.alt }}"
+              width="{{ x.img.width }}"
+              height="{{ x.img.height }}"
+              draggable="false"
+            >
+          </div>
+          <div class="content">
+            <h2>{{ x.title }}</h2>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <span
+      id="slider__nav-arrow--right"
+      class="nav-arrow"
+      title="Next slide"
+      data-prev
+      >&rarr;</span
+    >
+  </div>
+</section>
