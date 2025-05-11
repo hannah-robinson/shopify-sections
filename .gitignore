@@ -27,7 +27,7 @@
 .DS_Store
 Thumbs.db
 
-.vscode
+/.vscode
 
 # stores VSCode versions used for testing VSCode extensions
 .vscode-test
