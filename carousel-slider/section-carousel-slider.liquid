@@ -1,8 +1,21 @@
-<!-- {{ 'section-carousel-slider.css' | asset_url | stylesheet_tag }} -->
+{{ 'section-carousel-slider.css' | asset_url | stylesheet_tag }}
 <script src="section-carousel-slider.js" defer></script>
-<link rel="stylesheet" href="section-carousel-slider.css">
 
-<section id="section-carousel-slider" class="section-carousel-slider">
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section id="section-carousel-slider" class="section-carousel-slider section-{{ section.id }}-padding">
   <div class="wrapper">
     <span
       id="slider__nav-arrow--left"
@@ -16,10 +29,10 @@
         <a class="card" href="{{ x.url }}">
           <div class="img">
             <img
-              src="{{ x.img }}"
-              alt="{{ x.img.alt }}"
-              width="{{ x.img.width }}"
-              height="{{ x.img.height }}"
+              src="{{ x.image }}"
+              alt="{{ x.image.alt }}"
+              width="{{ x.image.width }}"
+              height="{{ x.image.height }}"
               draggable="false"
             >
           </div>
@@ -36,5 +49,6 @@
       data-prev
       >&rarr;</span
     >
+    <div class="featured-collection__dots"></div>
   </div>
 </section>
