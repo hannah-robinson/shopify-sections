@@ -16,35 +16,35 @@
 {%- endstyle -%}
 
 <section id="section-carousel-slider" class="section-carousel-slider section-{{ section.id }}-padding">
-  <div class="wrapper">
+  <div class="featured-collections__wrapper">
     <span
-      id="slider__nav-arrow--left"
-      class="nav-arrow"
+      id="featured-collection__nav-arrow--left"
+      class="featured-collections__nav-arrow"
       title="Previous slide"
       data-prev
       >&larr;</span
     >
-    <div class="slider">
-      {% for x in x %}
-        <a class="card" href="{{ x.url }}">
-          <div class="img">
+    <div class="featured-collections__slider">
+      {% for collection in collections %}
+        <a class="featured-collections__card" href="{{ collection.url }}">
+          <div class="featured-collections__img">
             <img
-              src="{{ x.image }}"
-              alt="{{ x.image.alt }}"
-              width="{{ x.image.width }}"
-              height="{{ x.image.height }}"
+              src="{{ collection | img_url: '450x450'}}"
+              alt="{{ collection.image.alt }}"
+              width="{{ collection.image.width }}"
+              height="{{ collection.image.height }}"
               draggable="false"
             >
           </div>
-          <div class="content">
-            <h2>{{ x.title }}</h2>
+          <div class="featured-collections__content">
+            <h2>{{ collection.title }}</h2>
           </div>
         </a>
       {% endfor %}
     </div>
     <span
-      id="slider__nav-arrow--right"
-      class="nav-arrow"
+      id="featured-collection__nav-arrow--right"
+      class="featured-collections__nav-arrow"
       title="Next slide"
       data-prev
       >&rarr;</span

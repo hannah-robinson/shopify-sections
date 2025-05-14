@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.featured-collections__slider')
   const cards = slider.querySelectorAll('.featured-collections__card')
   const dotsContainer = document.querySelector('.featured-collections__dots')
-  const arrowBtns = document.querySelectorAll('.nav-arrow')
+  const arrowBtns = document.querySelectorAll(
+    '.featured-collections__nav-arrow'
+  )
   const firstCardWidth = slider.querySelector('.featured-collections__card')
     .offsetWidth
   const sliderChildren = [...slider.children]
@@ -34,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
   arrowBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       slider.scrollLeft +=
-        btn.id === 'slider__nav-arrow--left' ? -firstCardWidth : firstCardWidth
+        btn.id === 'featured-collection__nav-arrow--left'
+          ? -firstCardWidth
+          : firstCardWidth
     })
   })
 
