@@ -1,5 +1,5 @@
 {{ 'section-carousel-slider.css' | asset_url | stylesheet_tag }}
-<script src="section-carousel-slider.js" defer></script>
+<script src="{{ 'section-carousel-slider.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,7 +15,7 @@
   }
 {%- endstyle -%}
 
-<section id="section-carousel-slider" class="section-carousel-slider section-{{ section.id }}-padding">
+<section id="section-carousel-slider" class="section-carousel-slider section-{{ section.id }}-padding page-width">
   <div class="featured-collections__wrapper">
     <span
       id="featured-collection__nav-arrow--left"
